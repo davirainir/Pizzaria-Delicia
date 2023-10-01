@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Pizzaria Delícia</title>
+    </head>
+    <body>
+        <header class = "header-bg">
+            <h1>Pizzaria Delícia</h1>
+            <nav>
+                <ul>
+                    <li><a class="link_nav" href="index.html">Início</a></li>
+                    <li><a class="link_nav" href="menu.html">Menu</a></li>
+                    <li><a class="link_nav" href="sobre_nos.html">Sobre Nós</a></li>
+                    <li><a class="link_nav" href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="menu">
+            <h2>Menu</h2>
+            <h3>Pizzas Salgadas</h3>
+            <ul>
+                <li>
+                    <img src="imgs/pizza_marguerita.jpg" alt="Pizza Margherita">
+                    <div class="menu-item-details">
+                        <h4>Margherita</h4>
+                        <p>Tomate, queijo mozzarella, manjericão.</p>
+                        <span>R$ 20,00</span>
+                        <button class="add-to-cart" data-name="Margherita" data-price="20.00">Adicionar ao Carrinho</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="imgs/pizza_pepperoni.jpg" alt="Pizza Pepperoni">
+                    <div class="menu-item-details">
+                        <h4>Pepperoni</h4>
+                        <p>Molho de tomate, pepperoni, queijo mozzarella.</p>
+                        <span>R$ 22,00</span>
+                        <button class="add-to-cart" data-name="Pepperoni" data-price="22.00">Adicionar ao Carrinho</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="imgs/pizza_vegetariana.jpeg" alt="Pizza Vegetariana">
+                    <div class="menu-item-details">
+                        <h4>Vegetariana</h4>
+                        <p>Molho de tomate, queijo mozzarella, pimentão, cebola, cogumelos.</p>
+                        <span>R$ 18,00</span>
+                        <button class="add-to-cart" data-name="Vegetariana" data-price="18.00">Adicionar ao Carrinho</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="imgs/pizza_frango.jpg" alt="Pizza Frango com Catupiry">
+                    <div class="menu-item-details">
+                        <h4>Frango com Catupiry</h4>
+                        <p>Molho de tomate, frango desfiado, queijo mozzarella, catupiry.</p>
+                        <span>R$ 24,00</span>
+                        <button class="add-to-cart" data-name="Frango com Catupiry" data-price="24.00">Adicionar ao Carrinho</button>
+                    </div>
+                </li>
+            </ul>
+
+            <h3>Pizzas Doces</h3>
+            <ul>
+                <li>
+                    <img src="imgs/pizza_chocolate.jpg" alt="Pizza de Chocolate">
+                    <div class="menu-item-details">
+                        <h4>Chocolate</h4>
+                        <p>Chocolate ao leite, chocolate branco, morangos.</p>
+                        <span>R$ 25,00</span>
+                        <button class="add-to-cart" data-name="Chocolate" data-price="25.00">Adicionar ao Carrinho</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="imgs/pizza_banana.jpg" alt="Pizza de Banana com Canela">
+                    <div class="menu-item-details">
+                        <h4>Banana com Canela</h4>
+                        <p>Banana, canela, açúcar mascavo.</p>
+                        <span>R$ 23,00</span>
+                        <button class="add-to-cart" data-name="Banana com Canela" data-price="23.00">Adicionar ao Carrinho</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="imgs/pizza_morango.jpg" alt="Pizza de Morango">
+                    <div class="menu-item-details">
+                        <h4>Chocolate com morango</h4>
+                        <p>Queijo mozzarella, morangos frescos, açúcar de confeiteiro, chocolate.</p>
+                        <span>R$ 26,00</span>
+                        <button class="add-to-cart" data-name="Morango" data-price="26.00">Adicionar ao Carrinho</button>
+                    </div>
+                </li>
+            </ul>
+
+            <h3>Bebidas</h3>
+            <ul>
+                <li>
+                    <img src="imgs/refri.jpg" alt="Refrigerante">
+                    <div class="menu-item-details">
+                        <h4>Refrigerante</h4>
+                        <p>Lata de refrigerante (350ml).</p>
+                        <span>R$ 5,00</span>
+                        <button class="add-to-cart" data-name="Refrigerante" data-price="5.00">Adicionar ao Carrinho</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="imgs/agua.jpeg" alt="Água Mineral">
+                    <div class="menu-item-details">
+                        <h4>Água Mineral</h4>
+                        <p>Água mineral (500ml).</p>
+                        <span>R$ 3,00</span>
+                        <button class="add-to-cart" data-name="Água Mineral" data-price="3.00">Adicionar ao Carrinho</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="imgs/suco.jpg" alt="Suco Natural">
+                    <div class="menu-item-details">
+                        <h4>Suco Natural</h4>
+                        <p>Suco natural de laranja (300ml).</p>
+                        <span>R$ 7,00</span>
+                        <button class="add-to-cart" data-name="Suco Natural" data-price="7.00">Adicionar ao Carrinho</button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="cart">
+            <h2>Carrinho de Compras</h2>
+            <ul id="cart-items">
+                <!-- Itens do carrinho serão adicionados aqui -->
+            </ul>
+                <!--Campo para o usuário digitar o nome-->
+            <div>
+                <label for="client_name">Nome do Cliente:</label>
+                <input id="client_name" type="text" placeholder="Digite seu nome aqui">
+            </div>
+
+                <!--forma de pagamento-->
+            <div id="payment-options">
+                <label for="payment-method">Forma de Pagamento:</label>
+                <select id="payment-method">
+                    <option value="Cartão de crédito">Cartão de Crédito</option>
+                    <option value="Dinheiro">Dinheiro</option>
+                    <option value="Pix">PIX</option>
+                </select>
+            </div>
+                <!--opções de entrega-->
+            <div>
+                <Label for="delivery">Tipo de Entrega:</Label>
+                <select id="select_delivery">
+                    <option value="Retirar no estabelecimento">Retirar no estabelecimento</option>
+                    <option value="Entregar no endereço">Entregar no Endereço</option>                
+                </select>
+            </div>
+
+            <!-- Adicione o campo de endereço -->
+            <div id="address" style="display: none;">
+                <label for="customer-address">Endereço de Entrega:</label>
+                <input id="input_address" type="text" placeholder="Digite seu endereço">
+            </div>
+            <!--Total do carrinh e botão de finalizar compra-->   
+            <p>Total: <span id="cart-total">R$ 0.00</span></p>
+            <button id="checkout-button">Finalizar Compra</button>
+        </section>
+
+        <footer>
+            <p>&copy; 2023 Pizzaria Delícia</p>
+        </footer>
+    </body>
+</html>
+<script src="script.js"></script>
+
