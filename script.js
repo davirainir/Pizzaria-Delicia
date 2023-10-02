@@ -99,13 +99,13 @@ document.addEventListener('DOMContentLoaded', function () {
             
             mensagemWhatsApp += `\nTotal: R$${total.toFixed(2)}\nTipo de Pagamento: ${payment}\nTipo de Entrega: ${delivery}`;
             
-            if (troco > total){
+            if ( delivery != "Entregar no endereço" && troco > total){
                 mensagemWhatsApp += `\nTroco: R$${troco - total}`;
             } else if (payment === "Dinheiro" && troco < total){
                 alert('Troco inválido, por favor insira um troco adequado')
                 return;
-            } else if (delivery === "Entregar no endereço") {
-                mensagemWhatsApp += `\nEndereço de Entrega: ${address}`
+            } else if (delivery === "Entregar no endereço" && troco > total) {
+                mensagemWhatsApp += `\nEndereço de Entrega: ${address}\nTroco: R$${troco - total}`
             }
 
             // Número de telefone para o qual você deseja enviar a mensagem (no formato internacional)
