@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 mensagemWhatsApp += `${item}\n`;
             });
 
-            mensagemWhatsApp += `\nTotal: R$ ${total.toFixed(2)}\n Tipo de Pagamento: ${payment}\n Troco: R$${troco}\n Tipo de Entrega: ${delivery}\n Endereço de Entrega: ${address}`;
+            mensagemWhatsApp += `\nTotal: R$ ${total.toFixed(2)}\nTipo de Pagamento: ${payment}\nTroco: R$${troco - total}\nTipo de Entrega: ${delivery}\nEndereço de Entrega: ${address}`;
 
             // Número de telefone para o qual você deseja enviar a mensagem (no formato internacional)
             const numeroTelefone = "5585998006527";
