@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const payment = paymentOption.value;
             const delivery = deliveryOption.value;
             const address = customerAddress.value;
-            const troco = customerTroco.value.replace('', 'R$');
+            const troco = customerTroco.value
             const total = parseFloat(cartTotal.textContent.replace('R$', ''));
             const clientName = clientNameInput.value;
 
@@ -96,13 +96,14 @@ document.addEventListener('DOMContentLoaded', function () {
             itemDetails.forEach((item) => {
                 mensagemWhatsApp += `${item}\n`;
             });
-
-            mensagemWhatsApp += `\nTotal: R$${total.toFixed(2)}\nTipo de Pagamento: ${payment}\nTroco: ${troco}\nTipo de Entrega: ${delivery}\nEndereço de Entrega: ${address}`;
-
-            if (troco > total) {
-                troco - total;
-            } else if (payment == "Dinheiro" && troco < total) {
-                alert('Troco invállido, por favor inisira um troco adequado');
+            
+            mensagemWhatsApp += `\nTotal: R$${total.toFixed(2)}\nTipo de Pagamento: ${payment}\nTipo de Entrega: ${delivery}\nEndereço de Entrega: ${address}`;
+            
+            if (troco > total){
+                mensagemWhatsApp += `\nTroco: R$${troco - total}`;
+            } else if (troco < total){
+                alert('Troco inválido, por favor insiira um troco adequado')
+                return;
             }
 
             // Número de telefone para o qual você deseja enviar a mensagem (no formato internacional)
