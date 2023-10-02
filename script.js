@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
     
-    //evento ouvinte para o select do tipo de pagamento
+    // Evento ouvinte para o select do tipo de pagamento
     paymentOption.addEventListener("change", function(){
         if (paymentOption.value === "Dinheiro") {
             Troco.style.display = "block";
@@ -82,8 +82,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const payment = paymentOption.value;
             const delivery = deliveryOption.value;
             const address = customerAddress.value;
-            const troco = customerTroco.value;
-            const total = parseFloat(cartTotal.textContent.replace('R$ ', ''));
+            const troco = customerTroco.value.replace('', 'R$');
+            const total = parseFloat(cartTotal.textContent.replace('R$', ''));
             const clientName = clientNameInput.value;
 
             // Obtenha a lista de detalhes dos itens do carrinho
@@ -97,7 +97,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 mensagemWhatsApp += `${item}\n`;
             });
 
-            mensagemWhatsApp += `\nTotal: R$ ${total.toFixed(2)}\nTipo de Pagamento: ${payment}\nTroco: R$${troco - total}\nTipo de Entrega: ${delivery}\nEndereço de Entrega: ${address}`;
+            mensagemWhatsApp += `\nTotal: R$${total.toFixed(2)}\nTipo de Pagamento: ${payment}\nTroco: ${troco}\nTipo de Entrega: ${delivery}\nEndereço de Entrega: ${address}`;
+
+            if (troco > total) {
+                troco - total;
+            } else if (payment == "Dinheiro" && troco < total) {
+                alert('Troco invállido, por favor inisira um troco adequado');
+            }
 
             // Número de telefone para o qual você deseja enviar a mensagem (no formato internacional)
             const numeroTelefone = "5585998006527";
