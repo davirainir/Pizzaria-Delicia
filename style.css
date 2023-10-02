@@ -49,7 +49,6 @@ nav ul li {
     font-weight: bold;
     display: block;
     margin-top: 20px;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 /* Estilo para o botão de finalizar compra no hover */
