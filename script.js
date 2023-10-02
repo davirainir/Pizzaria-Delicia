@@ -101,8 +101,8 @@ document.addEventListener('DOMContentLoaded', function () {
             
             if (troco > total){
                 mensagemWhatsApp += `\nTroco: R$${troco - total}`;
-            } else if (troco < total){
-                alert('Troco inválido, por favor insiira um troco adequado')
+            } else if (payment === "Dinheiro" && troco < total){
+                alert('Troco inválido, por favor insira um troco adequado')
                 return;
             }
 
