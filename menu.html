@@ -137,16 +137,23 @@
 
                 <!--forma de pagamento-->
             <div id="payment-options">
-                <label for="payment-method">Forma de Pagamento:</label>
-                <select id="payment-method">
+                <label for="select_payment">Forma de Pagamento:</label>
+                <select id="select_payment">
                     <option value="Cartão de crédito">Cartão de Crédito</option>
                     <option value="Dinheiro">Dinheiro</option>
                     <option value="Pix">PIX</option>
                 </select>
             </div>
+
+                <!--adicione o campo de troco-->
+            <div id="troco" style="display: none;">
+                <label for="input_troco">Troco para:</label>
+                <input type="text" id="input_troco" placeholder="digite o troco aqui">
+            </div>
+
                 <!--opções de entrega-->
             <div>
-                <Label for="delivery">Tipo de Entrega:</Label>
+                <Label for="select_delivery">Tipo de Entrega:</Label>
                 <select id="select_delivery">
                     <option value="Retirar no estabelecimento">Retirar no estabelecimento</option>
                     <option value="Entregar no endereço">Entregar no Endereço</option>                
@@ -155,7 +162,7 @@
 
             <!-- Adicione o campo de endereço -->
             <div id="address" style="display: none;">
-                <label for="customer-address">Endereço de Entrega:</label>
+                <label for="input_address">Endereço de Entrega:</label>
                 <input id="input_address" type="text" placeholder="Digite seu endereço">
             </div>
             <!--Total do carrinh e botão de finalizar compra-->   

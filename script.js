@@ -3,10 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const cartTotal = document.getElementById('cart-total');
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
     const checkoutButton = document.getElementById('checkout-button');
-    const paymentOption = document.getElementById('payment-method');
+    const paymentOption = document.getElementById('select_payment');
     const deliveryOption = document.getElementById('select_delivery');
     const customerAddress = document.getElementById('input_address');
+    const customerTroco = document.getElementById('input_troco')
     const Address = document.getElementById('address');
+    const Troco = document.getElementById('troco')
     const clientNameInput = document.getElementById('client_name');
 
     let cart = [];
@@ -64,6 +66,15 @@ document.addEventListener('DOMContentLoaded', function () {
             Address.style.display = "none";
         }
     });
+    
+    //evento ouvinte para o select do tipo de pagamento
+    paymentOption.addEventListener("change", function(){
+        if (paymentOption.value === "Dinheiro") {
+            Troco.style.display = "block";
+        } else {
+            Troco.style.display = "none";
+        }
+    });
 
     // Finalizar compra
     checkoutButton.addEventListener('click', function () {
@@ -71,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const payment = paymentOption.value;
             const delivery = deliveryOption.value;
             const address = customerAddress.value;
+            const troco = customerTroco.value;
             const total = parseFloat(cartTotal.textContent.replace('R$ ', ''));
             const clientName = clientNameInput.value;
 
@@ -85,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 mensagemWhatsApp += `${item}\n`;
             });
 
-            mensagemWhatsApp += `\nTotal: R$ ${total.toFixed(2)}\nTipo de Pagamento: ${payment}\nTipo de Entrega: ${delivery}\nEndereço de Entrega: ${address}`;
+            mensagemWhatsApp += `\nTotal: R$ ${total.toFixed(2)}\n Tipo de Pagamento: ${payment}\n Troco: R$${troco}\n Tipo de Entrega: ${delivery}\n Endereço de Entrega: ${address}`;
 
             // Número de telefone para o qual você deseja enviar a mensagem (no formato internacional)
             const numeroTelefone = "5585998006527";
