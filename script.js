@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             } else if (delivery === "Entregar no endereço" && troco > total) {
                 const troco_formatado = (troco - total).toFixed(2);
-                mensagemWhatsApp += `\nEndereço de Entrega: ${address}\nTroco: R$${troco}`
+                mensagemWhatsApp += `\nEndereço de Entrega: ${address}\nTroco: R$${troco_formatado}`
             }
 
             // Número de telefone para o qual você deseja enviar a mensagem (no formato internacional)
