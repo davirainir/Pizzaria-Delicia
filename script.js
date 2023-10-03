@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const Address = document.getElementById('address');
     const Troco = document.getElementById('troco')
     const clientNameInput = document.getElementById('client_name');
+    const semTroco = document.getElementById('input_radio_troco')
 
     let cart = [];
 
@@ -102,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if ( delivery != "Entregar no endereço" && troco > total){
                 const troco_formatado = (troco - total).toFixed(2);
                 mensagemWhatsApp += `\nTroco: R$${troco_formatado}`;
-            } else if (payment === "Dinheiro" && troco < total){
+            } else if (payment === "Dinheiro" && troco < total && semTroco === false){
                 alert('Troco inválido, por favor insira um troco adequado')
                 return;
             } else if (delivery === "Entregar no endereço" && troco > total) {
