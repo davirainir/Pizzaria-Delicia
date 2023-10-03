@@ -84,6 +84,8 @@ document.addEventListener('DOMContentLoaded', function () {
             semTroco.checked = false;
         } else if (semTroco.checked){
             customerTroco.disabled = true;
+        } else {
+            customerTroco.disabled = false;
         }
     });
 
