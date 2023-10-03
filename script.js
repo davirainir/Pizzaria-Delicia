@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if ( delivery != "Entregar no endereço" && troco > total){
                 const troco_formatado = (troco - total).toFixed(2);
                 mensagemWhatsApp += `\nTroco: R$${troco_formatado}`;
-            } else if (payment === "Dinheiro" && troco < total && semTroco === false){
+            } else if (payment === "Dinheiro" && troco < total && semTroco.checked == false){
                 alert('Troco inválido, por favor insira um troco adequado')
                 return;
             } else if (delivery === "Entregar no endereço" && troco > total) {
