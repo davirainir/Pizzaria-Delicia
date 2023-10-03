@@ -77,6 +77,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    semTroco.addEventListener('change', function () {
+        if (semTroco.checked && customerTroco.value.trim() != '') {
+            alert('Você marcou "Sem troco" e inseriu um valor de troco. Por favor, remova o valor de troco.');
+            customerTroco.value = ''; // Limpa o valor do campo de troco
+            semTroco.checked = false;
+        } else if (semTroco.checked){
+            customerTroco.disabled = true;
+        }
+    });
+
     // Finalizar compra
     checkoutButton.addEventListener('click', function () {
         if (cart.length > 0) {
