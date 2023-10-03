@@ -123,6 +123,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 mensagemWhatsApp += `\nEndereço de Entrega: ${address}\nTroco: R$${troco_formatado}`
             }
 
+            
+            // Verifique se o campo de nome está vazio
+            if (clientName.trim() === '') {
+                alert('Por favor, insira seu nome antes de finalizar a compra.');
+                return; // Impede a conclusão da compra
+            }
+
             // Número de telefone para o qual você deseja enviar a mensagem (no formato internacional)
             const numeroTelefone = "5585998006527";
 
