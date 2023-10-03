@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (payment === "Dinheiro" && troco < total){
                 alert('Troco inválido, por favor insira um troco adequado')
                 return;
-            } else if (delivery === "Entregar no endereço" && troco > total) {
+            } else if (delivery === "Entregar no endereço" && troco >= total) {
                 const troco_formatado = (troco - total).toFixed(2);
                 mensagemWhatsApp += `\nEndereço de Entrega: ${address}\nTroco: R$${troco_formatado}`
             }
