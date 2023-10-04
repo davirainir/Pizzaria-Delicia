@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             cartItemsList.appendChild(li);
             total += item.price;
-            itemDetails.push(`*${item.name} : R$ ${item.price.toFixed(2)}*`);
+            itemDetails.push(`*${item.name}: R$${item.price.toFixed(2)}*`);
         });
 
         cartTotal.textContent = `R$ ${total.toFixed(2)}`;
