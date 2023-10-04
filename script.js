@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             cartItemsList.appendChild(li);
             total += item.price;
-            itemDetails.push(`${item.name} - R$ ${item.price.toFixed(2)}`);
+            itemDetails.push(`*${item.name} : R$ ${item.price.toFixed(2)}*`);
         });
 
         cartTotal.textContent = `R$ ${total.toFixed(2)}`;
@@ -103,24 +103,24 @@ document.addEventListener('DOMContentLoaded', function () {
             const itemDetails = updateCart();
 
             // Construa a mensagem para o WhatsApp
-            let mensagemWhatsApp = `Pedido de ${clientName}:\n`;
+            let mensagemWhatsApp = `Pedido de *${clientName.toUpperCase()}:*\n`;
 
             // Adicione os detalhes dos itens do carrinho à mensagem
             itemDetails.forEach((item) => {
-                mensagemWhatsApp += `${item}\n`;
+                mensagemWhatsApp += `- ${item}\n`;
             });
             
-            mensagemWhatsApp += `\nTotal: R$${total.toFixed(2)}\nTipo de Pagamento: ${payment}\nTipo de Entrega: ${delivery}`;
+            mensagemWhatsApp += `\nTotal: *R$${total.toFixed(2)}*\nTipo de Pagamento: *${payment}*\nTipo de Entrega: *${delivery}*`;
             
             if ( delivery != "Entregar no endereço" && troco > total){
                 const troco_formatado = (troco - total).toFixed(2);
-                mensagemWhatsApp += `\nTroco: R$${troco_formatado}`;
+                mensagemWhatsApp += `\nTroco: *R$${troco_formatado}*`;
             } else if (payment === "Dinheiro" && troco < total && semTroco.checked == false){
                 alert('Troco inválido, por favor insira um troco adequado')
                 return;
             } else if (delivery === "Entregar no endereço" && troco > total) {
                 const troco_formatado = (troco - total).toFixed(2);
-                mensagemWhatsApp += `\nEndereço de Entrega: ${address}\nTroco: R$${troco_formatado}`
+                mensagemWhatsApp += `\nEndereço de Entrega: *${address}*\nTroco: *R$${troco_formatado}*`
             }
 
             
