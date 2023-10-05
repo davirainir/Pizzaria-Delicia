@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Evento ouvinte para o select do Tipo de entrega
     deliveryOption.addEventListener("change", function () {
-        if (deliveryOption.value === "Entregar no endereço") {
+        if (deliveryOption.value === "Entregar no Endereço") {
             // Mostra o input de texto do endereço de entrega
             Address.style.display = "block";
         } else {
@@ -112,13 +112,13 @@ document.addEventListener('DOMContentLoaded', function () {
             
             mensagemWhatsApp += `\nTotal: *R$${total.toFixed(2)}*\nTipo de Pagamento: *${payment}*\nTipo de Entrega: *${delivery}*`;
             
-            if ( delivery != "Entregar no endereço" && troco > total){
+            if ( delivery != "Entregar no Endereço" && troco > total){
                 const troco_formatado = (troco - total).toFixed(2);
                 mensagemWhatsApp += `\nTroco: *R$${troco_formatado}*`;
             } else if (payment === "Dinheiro" && troco < total && semTroco.checked == false){
                 alert('Troco inválido, por favor insira um troco adequado')
                 return;
-            } else if (delivery === "Entregar no endereço" && troco > total) {
+            } else if (delivery === "Entregar no Endereço" && troco > total) {
                 const troco_formatado = (troco - total).toFixed(2);
                 mensagemWhatsApp += `\nEndereço de Entrega: *${address}*\nTroco: *R$${troco_formatado}*`
             }
