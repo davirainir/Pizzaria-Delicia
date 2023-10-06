@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Evento ouvinte para a checkbox do troco
     semTroco.addEventListener('change', function () {
         if (semTroco.checked && customerTroco.value.trim() != '') {
             alert('Você marcou "Sem troco" e inseriu um valor de troco. Por favor, remova o valor de troco.');
@@ -112,13 +113,18 @@ document.addEventListener('DOMContentLoaded', function () {
             
             mensagemWhatsApp += `\nTotal: *R$${total.toFixed(2)}*\nTipo de Pagamento: *${payment}*\nTipo de Entrega: *${delivery}*`;
             
+            // Adiciona o calculo do troco na mensagem do whatsapp
             if ( delivery != "Entregar no Endereço" && troco > total){
                 const troco_formatado = (troco - total).toFixed(2);
                 mensagemWhatsApp += `\nTroco: *R$${troco_formatado}*`;
-            } else if (payment === "Dinheiro" && troco < total && semTroco.checked == false){
+            }
+            // Mensagem de troco inválido, caso o troco seja menor que o total
+             else if (payment === "Dinheiro" && troco < total && semTroco.checked == false){
                 alert('Troco inválido, por favor insira um troco adequado')
                 return;
-            } else if (delivery === "Entregar no Endereço" && troco > total) {
+            }
+            // Adiciona o endereço do cliente na mensagem do whatsapp
+             else if (delivery === "Entregar no Endereço" && troco > total) {
                 const troco_formatado = (troco - total).toFixed(2);
                 mensagemWhatsApp += `\nEndereço de Entrega: *${address}*\nTroco: *R$${troco_formatado}*`
             }
