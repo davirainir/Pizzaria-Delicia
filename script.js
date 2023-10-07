@@ -132,10 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
             else if (delivery === "Entregar no Endereço" && address === ''){
                 alert('O endereço não foi informado, por favor digite o endereço.');
                 return;
-            }
-            
-            
-
+            } 
             // Verifique se o campo de nome está vazio
             else if (clientName.trim() === '') {
                 alert('Por favor, insira seu nome antes de finalizar a compra.');
