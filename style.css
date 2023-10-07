@@ -188,9 +188,18 @@ section {
     border-radius: 5px;
     cursor: pointer;
 }
-footer {
+/* Estilo dos footers */
+.footer_contato {
     background-color: #D10606; /* Vermelho escuro para o rodapé */
     color: #fff;
     text-align: center;
     padding: 10px 0;
+    margin-top: 311px;
+}
+.footer_sobre_nos{
+    background-color: #D10606; /* Vermelho escuro para o rodapé */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 385px;
 }
