@@ -6,6 +6,11 @@ body {
     background-color: #F0D890; /* Amarelo claro */
 }
 
+iframe {
+    max-width: 100%;
+    width: 800px;  
+    height: 400px;
+}
 .header-bg {
     background-image: url('imgs/pexels-horizon-content-3762075.jpg'); /* Substitua 'seu_fundo.jpg' pelo caminho da sua imagem de fundo */
     background-size: cover;
@@ -202,7 +207,7 @@ section {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    margin-top: 385px;
+    margin-top: 30px;
 }
 #footer_index{
     background-color: #D10606; /* Vermelho escuro para o rodapé */
