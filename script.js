@@ -120,18 +120,24 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             // Mensagem de troco inválido, caso o troco seja menor que o total
              else if (payment === "Dinheiro" && troco < total && semTroco.checked == false){
-                alert('Troco inválido, por favor insira um troco adequado')
+                alert('Troco inválido, por favor insira um troco adequado.')
                 return;
             }
             // Adiciona o endereço do cliente na mensagem do whatsapp
-             else if (delivery === "Entregar no Endereço" && troco > total) {
+             else if (delivery === "Entregar no Endereço" && troco > total && address != '') {
                 const troco_formatado = (troco - total).toFixed(2);
                 mensagemWhatsApp += `\nEndereço de Entrega: *${address}*\nTroco: *R$${troco_formatado}*`
+            } 
+            // Mensagem de erro, caso a opção "Entregar no Endereço" seja escolhida e o endereço não seja informado                
+            else if (delivery === "Entregar no Endereço" && address === ''){
+                alert('O endereço não foi informado, por favor digite o endereço.');
+                return;
             }
-
             
+            
+
             // Verifique se o campo de nome está vazio
-            if (clientName.trim() === '') {
+            else if (clientName.trim() === '') {
                 alert('Por favor, insira seu nome antes de finalizar a compra.');
                 return; // Impede a conclusão da compra
             }

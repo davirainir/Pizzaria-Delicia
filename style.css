@@ -51,7 +51,7 @@ nav ul li {
     margin-top: 20px;
 }
 
-/* Estilo para o botão de finalizar compra no hover */
+/* Estilo para hover do botão de finalizar compra */
 #checkout-button:hover {
     background-color: #ecb205; /* Amarelo ao passar o mouse */
     color: #fff; /* Texto branco ao passar o mouse */
